@@ -1,0 +1,49 @@
+ * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 20vw;
+	text-align: center;
+    background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  padding-top : 20px;
+}
+
+.main_nav {
+	background-color: #ccc;
+}
+
+.main_nav ul {
+	display: flex;
+	padding: 10px;
+	margin: 10px;
+}
+
+.main_nav li {
+	list-style: none;
+	text-decoration: none;
+	margin :5px;
+	font-weight: bold;
+}
+.main_nav li:last-child {
+	margin-left: auto;
+}
+
+table {
+	width: 80%;
+	text-align: center;
+	margin:20px auto;
+	border-collapse: collapse;
+}
+
+th{
+  background-color: #ddd;
+  padding :10px;
+
+}
