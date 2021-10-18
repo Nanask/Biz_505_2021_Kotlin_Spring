@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+        type="text/css"
+        href="css/main.css">
+</head>
+
+<body>
+<header>
+    <h1>나라상사 고객관리 시스템 2021 V1</h1>
+</header>
+<nav class="main_nav">
+    <ul>
+        <li>Home</li>
+        <li>주문관리</li>
+        <li>결제관리</li>
+        <li>로그인</li>
+    </ul>
+</nav>
+  <table>
+      <tr>
+          <th>고객ID</th>
+          <th>이름</th>
+          <th>전화번호</th>
+          <th>주소</th>
+          <th>담당자명</th>
+          <th>담당자연락처</th>
+          <th>매출액합계(인원)</th>
+      </tr>
+      <tr>
+          <td th:text="${BuyerList[0].id}"></td>
+          <td th:text="${BuyerList[0].name}"></td>
+          <td th:text="${BuyerList[0].tel}"></td>
+          <td th:text="${BuyerList[0].addr}"></td>
+          <td th:text="${BuyerList[0].cname}"></td>
+          <td th:text="${BuyerList[0].ctel}"></td>
+          <td th:text="${BuyerList[0].sum}"></td>
+      </tr>
+  </table>
+</body>
+</html>
