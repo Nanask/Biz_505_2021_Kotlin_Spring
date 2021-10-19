@@ -5,7 +5,7 @@ import com.callor.spring.service.BuyerService
 import org.springframework.stereotype.Service
 import kotlin.random.Random
 
-@Service
+@Service("bServiceV1")
 class BuyerServiceImpl: BuyerService {
 
     companion object {
