@@ -1,49 +1,63 @@
- * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
 header {
-	height: 20vw;
-	text-align: center;
-    background-color: #fff;
+    background-color: aqua;
+    padding:2rem;
+    color:white;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
 }
 
-h1 {
-  text-align: center;
-  padding-top : 20px;
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: cadetblue;
 }
 
-.main_nav {
-	background-color: #ccc;
+nav li {
+    display: inline-block;
+    padding:15px 20px;
+    color:white;
+    cursor:pointer;
 }
 
-.main_nav ul {
-	display: flex;
-	padding: 10px;
-	margin: 10px;
+nav li.login {
+    margin-left: auto;
 }
 
-.main_nav li {
-	list-style: none;
-	text-decoration: none;
-	margin :5px;
-	font-weight: bold;
-}
-.main_nav li:last-child {
-	margin-left: auto;
+nav li:hover  {
+    background-color: aliceblue;
+    color:blue
 }
 
-table {
-	width: 80%;
-	text-align: center;
-	margin:20px auto;
-	border-collapse: collapse;
+footer {
+    background-color:blue;
+    color:white;
+    text-align:center;
+    padding:1rem;
 }
 
-th{
-  background-color: #ddd;
-  padding :10px;
-
+table.buyer_list {
+    width: 80%;
+    margin:10px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
+table.buyer_list th {
+    background-color: #ddd;
+}
+
+table.buyer_list th, table.buyer_list td {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+    text-align: center;
+}
+
+
+
+

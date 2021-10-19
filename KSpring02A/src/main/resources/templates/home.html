@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+<th:block th:replace="fragment/headerAndFooter :: headFragment"></th:block>
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet"
-        type="text/css"
-        href="css/main.css">
 </head>
+<link th:href="@{/static/css/main.css}" type="text/css" rel="stylesheet">
 
 <body>
-<header>
-    <h1>나라상사 고객관리 시스템 2021 V1</h1>
-</header>
-<nav class="main_nav">
-    <ul>
-        <li>Home</li>
-        <li>주문관리</li>
-        <li>결제관리</li>
-        <li>로그인</li>
-    </ul>
-</nav>
-  <table>
-      <tr>
-          <th>고객ID</th>
-          <th>이름</th>
-          <th>전화번호</th>
-          <th>주소</th>
-          <th>담당자명</th>
-          <th>담당자연락처</th>
-          <th>매출액합계(인원)</th>
-      </tr>
-      <tr>
-          <td th:text="${BuyerList[0].id}"></td>
-          <td th:text="${BuyerList[0].name}"></td>
-          <td th:text="${BuyerList[0].tel}"></td>
-          <td th:text="${BuyerList[0].addr}"></td>
-          <td th:text="${BuyerList[0].cname}"></td>
-          <td th:text="${BuyerList[0].ctel}"></td>
-          <td th:text="${BuyerList[0].sum}"></td>
-      </tr>
-  </table>
+
+<th:block th:replace="fragment/headerAndFooter :: headerFragment"></th:block>
+
+<th:block th:replace="fragment/headerAndFooter :: navFragment"></th:block>
+
+<table class="buyer_list">
+    <thead>
+    <tr>
+        <th>고객 ID</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+        <th>담당자명</th>
+        <th>담당자연락처</th>
+        <th>매출액합계(만원)</th>
+    </tr>
+    </thead>
+    <tbody>
+<!--     users에 담겨있는걸 foreach로 반복하면서 각요소를 user에 담아서 내부로 보내라 -->
+    <tr th:each="USER: ${USERS}" th:data-id="${USER.userid}">
+        <!-- 서버를통해 데이터를 받아오면 USER.userid 의 내용이 보이고,
+            그냥 돌리면 B001이 보인다는 장점이 있다.-->
+        <td th:text="${USER.userid}" />
+        <td th:text="${USER.name}" />
+        <td th:text="${USER.tel}" />
+        <td th:text="${USER.address}" />
+        <td th:text="${USER.manager}" />
+        <td th:text="${USER.man_tel}" />
+        <td th:text="${USER.buy_total}" />
+    </tr>
+    </tbody>
+</table>
+
+<th:block th:replace="fragment/headerAndFooter :: footerFragment"></th:block>
+
 </body>
 </html>

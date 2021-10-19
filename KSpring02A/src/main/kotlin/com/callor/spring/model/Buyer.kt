@@ -1,6 +1,14 @@
 package com.callor.spring.model
 
-data class Buyer(var id:String, var name:String, var tel:String, var addr:String, var cname:String, var ctel:String,
-var sum:Int) {
-
-}
+/**
+ * DTO(VO) 클래스
+ */
+data class Buyer(
+        val userid : String,
+        val name : String,
+        val tel: String,
+        val address : String,
+        val manager: String,
+        val man_tel : String,
+        val buy_total : Int,
+)
