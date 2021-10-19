@@ -8,7 +8,7 @@
 // $(function(){
 
 // })
-$(()=>{
+$(function(){
     // JQuery 코드 영역
     // $("table.buyer_list tr").click(function() {  })
     /*
@@ -23,8 +23,8 @@ $(()=>{
     //    location.href="/detail?userid=" + id
     // })
 
-    function() tableClickHandler {
-        const id $(this).data("id")
+    function tableClickHandler() {
+        const id = $(this).data("id")
         location.href = "/detail?userid=" + id
     }
     $("table.buyer_list tr").on("click", tableClickHandler)
