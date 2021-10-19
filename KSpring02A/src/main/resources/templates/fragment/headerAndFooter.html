@@ -1,0 +1,26 @@
+<!-- head tag로 감싸져있는 부분을 headFragment로 쓰겠다! -->
+<head th:fragment="headFragment">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>나라상사 고객관리</title>
+</head>
+
+<header th:fragment="headerFragment">
+    <h1>나라상사 고객관리 시스템 2021 V1</h1>
+</header>
+
+<nav th:fragment="navFragment">
+    <ul>
+        <li>Home</li>
+        <li>주문 관리</li>
+        <li class="pay">결제 관리</li>
+        <li class="login">로그인</li>
+    </ul>
+</nav>
+
+<footer th:fragment="footerFragment">
+    <address>CopyRight &copy;iniziato@naver.com</address>
+</footer>
