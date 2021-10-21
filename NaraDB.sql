@@ -33,3 +33,27 @@ INSERT INTO tbl_buyer(userid, name)
 VALUES('B001','홍길동');
 INSERT INTO tbl_buyer(userid, name)
 VALUES('B002','성춘향');
+
+-- 업데이트를 실행할 때는 반드시 변경하고자 하는 데이터의
+-- PK를 확인하고 PK를 조건절(WHERE)에 지정하여 실행을 한다
+UPDATE tbl_buyer SET tel='010-111-1111'
+WHERE userid = 'B001';
+
+-- DELETE를 실행할때도 반드시 삭제하고자 하는 데이터의 PK를 확인하고
+-- 조건절에 PK를 설정하여 실행한다
+DELETE FROM tbl_buyer
+WHERE userid = 'B002';
+
+-- 보안사고 : 권한이 없는 사용자가 침투하여 사고내기
+/* 
+	무결성파괴 : 권한이 있는 사용자가 잘못하여 DB에 문제를 일으키는 것이다
+		역할을 적절하게 부여하는 것이 좋다.
+        PK와 FK 관리를 잘 해야 한다
+*/		
+
+DESC tbl_sales;	
+
+
+show tables;
+desc tbl_sales;
+desc hibernate_sequence;

@@ -39,7 +39,7 @@ JSON.stringify() 문자열로 바꿔서 alert()에 표시하자
         let href="/"
         if(text === "Home") {
 //            location.href="/"
-        
+
         }else if(text === "주문 관리") {
 //            location.href="/order"
         href+="order"
