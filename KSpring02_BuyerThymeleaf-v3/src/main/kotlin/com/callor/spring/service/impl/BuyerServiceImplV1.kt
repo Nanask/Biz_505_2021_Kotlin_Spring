@@ -6,6 +6,7 @@ import com.callor.spring.repository.BuyerRepository
 import com.callor.spring.service.BuyerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.util.*
 import kotlin.random.Random
 
 /**
@@ -26,19 +27,31 @@ class BuyerServiceImplV1(val bRepo:BuyerRepository) : BuyerService {
 
 
     override fun selectAll(): Array<Buyer> {
-        return ConfigData.BUYER_LIST
+//        return ConfigData.BUYER_LIST
+        // 전체를 가져와서 타입이 틀린것을 Array 로 타입변경??
+        return bRepo.findAll().toTypedArray()
     }
 
     override fun findById(userid: String): Buyer {
-        val findUser = ConfigData.BUYER_LIST.filter { buyer -> buyer.userid == userid }
-        return findUser[0]
+//        val findUser = ConfigData.BUYER_LIST.filter { buyer -> buyer.userid == userid }
+        // repository 의 findById() 는 실제 데이터 (Buyer)를 optional 이라는 특별한 객체로
+        // wrapping 하여 가져온다.
+        // 필요한 데이터는 .get() method 를 사용하여
+        // 한번 더 추출해 주어야 한다.
+        val buyer:Optional<Buyer> = bRepo.findById(userid)
+        return buyer.get()
+//        return findUser[0]
     }
 
     override fun findByName(name: String): Array<Buyer> {
-        val userNum = ConfigData.RND.nextInt(ConfigData.BUYER_LIST.size)
-        return arrayOf(ConfigData.BUYER_LIST[userNum])
-    }
+//        val userNum = ConfigData.RND.nextInt(ConfigData.BUYER_LIST.size)
+//        val buyers = bRepo.findByName(name)
+//        return buyers
 
+        // 별도의 값이 없다면 바로 return하는 것을 권장
+        return bRepo.findByName(name)
+//        return arrayOf(ConfigData.BUYER_LIST[userNum])    }
+    }
     override fun findByTel(name: String): Array<Buyer> {
         TODO("Not yet implemented")
     }
@@ -49,16 +62,19 @@ class BuyerServiceImplV1(val bRepo:BuyerRepository) : BuyerService {
 //        return resultBuyer
         // Insert Or Update
         // 기존데이터가 있으면 update, 없으면 insert
-        return bDao.save(buyer)
+        return bRepo.save(buyer)
 
     }
 
-    override fun delete(buyer: Buyer): Buyer {
-        TODO("Not yet implemented")
+    override fun delete(userid: String) {
+
+
+
+        return bRepo.deleteById(userid)
     }
 
     override fun update(buyer: Buyer): Buyer {
-        TODO("Not yet implemented")
+        return bRepo.save(buyer)
     }
 
 }

@@ -28,23 +28,23 @@ data class Buyer(
         nullable = false, // not null
         unique = true,// UNIQUE
         name="userid")
-    val userid: String? = null,
+    var userid: String? = null,
 
     @Column(columnDefinition = "VARCHAR(25)", nullable = false)
-    val name: String? = null,
+    var name: String? = null,
 
     @Column(columnDefinition = "VARCHAR(25)", nullable = true)
-    val tel: String? = null,
+    var tel: String? = null,
 
     @Column(columnDefinition = "VARCHAR(25)", nullable = true)
-     val manager: String? = null,
+    var manager: String? = null,
 
     @Column(columnDefinition = "VARCHAR(25)", nullable = true)
-     val man_tel: String? = null,
+    var man_tel: String? = null,
 
     @Column(columnDefinition = "CHAR(4)", nullable = true)
-     val buy_total: Int?=0,
+    var buy_total: Int?=0,
 
     @Column(nullable = true)
-    val address: String? = null,
+    var address: String? = null,
 )
