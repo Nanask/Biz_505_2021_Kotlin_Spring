@@ -42,7 +42,7 @@ JSON.stringify() 문자열로 바꿔서 alert()에 표시하자
 
         }else if(text === "주문 관리") {
 //          location.href="/order/list"
-            href+="order/"
+            href+="order"
         }else if(text === "결제 관리") {
             href+="pay"
         }else if(text === "로그인") {

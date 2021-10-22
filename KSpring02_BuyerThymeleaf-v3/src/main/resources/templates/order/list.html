@@ -12,7 +12,7 @@
             margin-button:5px;
         }
     </style>
-    <table class="buyer_list">
+    <table class="list order_list">
         <thead>
         <tr>
             <th>No.</th>
@@ -25,14 +25,14 @@
         </tr>
         </thead>
         <tbody>
-            <tr class="buyer_tr" >
-                <td>1</td>
-                <td>B001</td>
-                <td>2021-10-21 11:12:00</td>
-                <td>아이폰 13</td>
-                <td>1,500,000</td>
-                <td>10</td>
-                <td>15,000,000</td>
+            <tr class="buyer_tr" th:each="SALE: ${SALES}" th:data-id="${SALE.seq}">
+                <td th:text="${SALE.seq}"/>
+                <td th:text="${SALE.userid}"/>
+                <td th:text="${SALE.date}"/>
+                <td th:text="${SALE.pname}"/>
+                <td th:text="${SALE.amt}"/>
+                <td th:text="${SALE.qty}"/>
+                <td th:text="${SALE.total}"/>
             </tr>
         </tbody>
     </table>
@@ -40,7 +40,7 @@
     <script>
 <!--        $(function() {-->
 <!--            $("button.btn_insert").on("click",function() {-->
-<!--                location.href="/buyer/insert"-->
+<!--                location.href="/order/insert"-->
 <!--            })-->
 <!--        })-->
     </script>
