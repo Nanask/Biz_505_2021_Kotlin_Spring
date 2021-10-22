@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/layout}">
+
+<section layout:fragment="content">
+    <script th:inline="javascript">
+
+    var seq = /*[[ ${SALES.seq} ]]*/ null
+    </script>
+
+        <section class="detail order_detail">
+            <div>
+                <label>ID</label><span th:text="${SALES.userid}" />
+                <label>상품명</label><span th:text="${SALES.pname}" />
+            </div>
+            <div>
+                <label>단가</label><span th:text="${SALES.amt}" />
+                <label>수량</label><span th:text="${SALES.qty}" />
+            </div>
+            <div>
+                <button class="btn_update">주문 수정</button>
+                <button class="btn_delete btn_warring">주문 삭제</button>
+                <button class="btn_list">List</button>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="user_table">
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>상품명</th>
+                <th>단가</th>
+                <th>수량</th>
+                <th>금액</th>
+            </tr>
+            <tr th:each="PRO: ${PRODUCT}" th:data-id="${PRO.p_id}">
+                <td th:text="${PRO.p_no}"/>
+                <td th:text="${PRO.p_name}"/>
+                <td th:text="${PRO.p_price}"/>
+                <td th:text="${PRO.p_qty}"/>
+                <td th:text="${PRO.total_price}"/>
+            </tr>
+            <tr class="total_tr">
+                <th>합계</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <button>주문 추가</button>
+
+    </div>
+    <script>
+            $(function() {
+                $("button.btn_insert").on("click",function() {
+                    location.href="/order/insert"
+                })
+            })
+    </script>
+</section>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="@{/layout}">
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/layout}">
 
 <section layout:fragment="content">
     <script th:inline="javascript">
@@ -34,7 +34,7 @@
             <button>고객정보 삭제</button>
         </div>
         -->
-        <section class="buyer_detail">
+        <section class="detail buyer_detail">
             <div>
                 <label>ID</label><span th:text="${BUYER.userid}" />
                 <label>이름</label><span th:text="${BUYER.name}" />

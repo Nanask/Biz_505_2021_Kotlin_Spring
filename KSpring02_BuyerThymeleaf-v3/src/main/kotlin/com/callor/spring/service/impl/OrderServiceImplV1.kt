@@ -39,12 +39,12 @@ class OrderServiceImplV1(val salesDao:SalesRepository):OrderService {
     }
 
     override fun delete(seq: Long) {
-        TODO("Not yet implemented")
-        salesDao.deleteById(seq)
+
+        return salesDao.deleteById(seq)
     }
 
     override fun update(sales: Sales): Sales {
-        TODO("Not yet implemented")
+
         return salesDao.save(sales)
     }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<section layout:fragment="content">
+    <form class="order form_write" method="post" th:object="${ORDER}">
+<!--        BUYER를 보낼테니 밑에서 알아서 만들어-->
+        <fieldset>
+            <legend>주문 정보 등록</legend>
+            <div>
+                <label>고객 ID</label>
+                <input name="userid" placeholder="고객 ID를 입력하세요" th:field="*{userid}"/>
+            </div>
+            <div>
+                <label>거래일시</label>
+                <input name="date" type="date" placeholder="거래 날짜를 입력해주세요" th:field="*{date}"/>
+            </div>
+            <div>
+                <label>상품명</label>
+                <input name="pname" placeholder="상품명을 입력하세요" th:field="*{pname}"/>
+            </div>
+            <div>
+                <label>단가</label>
+                <input name="amt" placeholder="단가를 입력하세요" th:field="*{amt}"/>
+            </div>
+            <div>
+                <label>수량</label>
+                <input name="qty" placeholder="수량을 입력하세요" th:field="*{qty}"/>
+            </div>
+            <div>
+                <label>합계</label>
+                <input name="total" placeholder="합계를 입력하세요" th:field="*{total}"/>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_save">등록</button>
+                <button type="button" class="btn_list">LIST</button>
+            </div>
+        </fieldset>
+    </form>
+</section>

@@ -2,7 +2,7 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="@{/layout}">
+      layout:decorator="~{/layout}">
 
 <section layout:fragment="content">
     <style>
@@ -38,11 +38,11 @@
     </table>
     <div class="btn_box"><button class="btn_order">주문</button></div>
     <script>
-<!--        $(function() {-->
-<!--            $("button.btn_insert").on("click",function() {-->
-<!--                location.href="/order/insert"-->
-<!--            })-->
-<!--        })-->
+        $(function() {
+            $("button.btn_order").on("click",function() {
+                location.href="/order/insert"
+            })
+        })
     </script>
 </section>
 </html>

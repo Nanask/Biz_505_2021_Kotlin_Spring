@@ -39,4 +39,7 @@ $(function() {
     }
 
     $("table.buyer_list tr").on("click", tableClickHandler)
+
+
+   
 })
