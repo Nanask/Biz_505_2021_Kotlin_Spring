@@ -1,0 +1,47 @@
+#Content Path
+server.servlet.context-path: /erp
+
+#Azure
+# yaml(야물) 프로퍼티를 사용하여 propertice 설정하기
+# classpath: spring src/main 폴더를 가리키는 키워드
+spring:
+  config.import: "optional:classpath:app-dbms.yml, classpath:app-logger.yml, classpath:app-jpa.yml"
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:static/
+      add-mappings: true
+
+## DB connection setting
+#  datasource:
+#    driver-class-name: "com.mysql.cj.jdbc.Driver"
+#    url: "jdbc:mysql://localhost:3306/naraDB"
+#    username: "root"
+#    password: "!Biz12341234"
+
+#  # JPA Setting
+#    jpa:
+#      hibernate:
+#        ddl-auto: create
+#
+#    # bulk date insert or update Batch Process Enable
+#        jdbc:
+#          batch-auto: 100
+#        order-insert: true
+#        order-update: true
+#
+#
+#      database: mysql
+#      database-plattform: org.hibernate.dialect.MySQL8Dialect
+#
+#      # SQL logger
+#      show-sql: true
+#      properties.hibernate.format_sql: true
+
+  # logger Setting
+  out.put.ansi.enabled: ALWAYS
+#  logging:
+#    level:
+#      root: info
+#    com.callor.spring: debug

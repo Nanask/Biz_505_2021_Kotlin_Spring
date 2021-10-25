@@ -1,0 +1,9 @@
+# logger Setting
+logging:
+  level:
+    root: info
+    com.callor.spring:
+      controller: debug
+      service: debug
+      config: debug
+      repository : debug

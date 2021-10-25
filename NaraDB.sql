@@ -57,3 +57,51 @@ DESC tbl_sales;
 show tables;
 desc tbl_sales;
 desc hibernate_sequence;
+
+-- 고객별로 몇번씩 거래했나?
+select userid, COUNT(userid) FROM tbl_sales
+GROUP BY userid;
+-- 고객별로 얼만큼씩 구입을 했나?
+SELECT userid, SUM(total) FROM tbl_sales
+GROUP BY userid;
+-- 상품별로 몇번씩 판매가 되었나
+SELECT pname, count(pname) FROM tbl_sales
+GROUP BY pname
+-- 판매가 많은 순으로 보여달라
+ORDER BY count(pname) DESC;
+
+-- 상품별로 총 몇개씩 판매가 되었나
+SELECT panme, sum(qty) FROM tbl_sales
+GROUP BY pname;
+
+-- 상품별로 총판매금액이 얼마인가
+SELECT pname, sum(total) FROM tbl_sales
+GROUP BY pname;
+
+-- 고객아이디별로 어떤 상품을 몇개 구매했는가
+SELECT userid, pname, COUNT(*) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, pname;
+
+SELECT userid, pname, SUM(qty) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, pname;
+
+-- 어떤고객이 어떤 상품을 몇개씩 구매했는가, 많이 구매한 순으로 보여라
+SELECT userid, pname, SUM(qty) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, SUM(qty) DESC;
+
+-- 어떤고객이 어떤 상품을 몇개씩 구매했는가, 금액이 큰 순으로 보여라
+SELECT userid, pname, SUM(total) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, SUM(total) DESC;
+
+-- userID가 겹치기 때문에 앞에 B를 붕여야한다?
+-- 어떤 사람이 어떤
+SELECT S.userid, B.name pname, SUM(total) 
+FROM tbl_sales S
+	LEFT JOIN tbl_buyer B
+		ON S.userid = B.userid
+GROUP BY S.userid, B.name ,pname
+ORDER BY S.userid, SUM(total) DESC;

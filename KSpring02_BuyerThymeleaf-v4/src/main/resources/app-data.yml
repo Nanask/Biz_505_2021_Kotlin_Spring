@@ -1,0 +1,8 @@
+# com.callor.spring.student-file=student.txt
+
+com:
+  callor:
+    spring:
+      student-file: "student.txt"
+      app-anme: "boot 프로젝트"
+# 이렇게 만들어서 한번에 관리할 수 있도록 했다.
