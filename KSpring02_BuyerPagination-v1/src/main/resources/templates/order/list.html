@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<section layout:fragment="content">
+    <style>
+        section.order_list div.nextPage {
+            background-color: green;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+        }
+        </style>
+    <table class="order_list">
+        <tr>
+            <th>SEQ</th>
+            <th>고객 ID</th>
+            <th>거래일시</th>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>수량</th>
+            <th>합계</th>
+        </tr>
+        <tr th:each="SALE: ${SALES}" th:data-seq="${SALE.seq}">
+            <td th:text="${SALEStat.count}"></td>
+            <td th:text="${SALE.userid}"></td>
+            <td th:text="${SALE.date}"></td>
+            <td th:text="${SALE.pname}"></td>
+            <td th:text="${SALE.amt}"></td>
+            <td th:text="${SALE.qty}"></td>
+            <td th:text="${SALE.total}"></td>
+        </tr>
+    </table>
+    <div class="btn_box">
+        <div class="nextPage">더보기</div>
+        <button class="btn_insert">주문 등록</button>
+    </div>
+    <script>
+        $(function() {
+            let currentPage = 0;
+            let lastPage = false;
+
+
+            $("button.btn_insert").on("click", function(){
+                location.href= "/order/insert";
+            })
+        $("div.btn_box div.nextPage").on("click", function () {
+
+            if (lastPage) {
+            alert("마지막 페이지입니다")
+            return false
+            }
+
+
+        /**
+         * project에 context-path가 설정되어 있을 때는
+         * ${rootPath}/buyer/sub_page 와 같이 사용해도 문제가 없다
+         *
+         * context-path가 설정이 되어 있지 않을 때
+         * ${rootPath}buyer/sub_page {rootPath}를 사용하면 /를 사용하지 않고
+         * http://buyer/sub_page  그렇지 않다면 /를 사용해주어야 한다.
+         */
+
+        // jQuery.ajax
+        $.ajax({
+        url: `${rootPath}order/sub_page`,
+                               data: {page: ++currentPage},
+        method: "GET"
+        }).done(function (result) {
+            console.log(result.last)
+            lastPage = result.last
+            $("table.order_list tbody").append(result)
+        })
+        })
+        })
+    </script>
+</section>
+
+</html>
