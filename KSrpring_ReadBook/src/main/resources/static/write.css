@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header.main_header {
+    height: 17vh;
+    margin: auto;
+    background-color: #495464;
+}
+header.main_header h1,
+header.main_header h3{
+    padding-top: 17px;
+    text-align: center;
+    color: #F4F4F2;
+}
+header.main_header h1 {
+    font-size: 40px;
+}
+div.input_box {
+    height: 60vh;
+    width: 80%;
+    margin: 20px auto;
+
+}
+div.input_box div {
+    padding-top: 20px;
+    margin: 0 auto;
+}
+div.input_box div input {
+    outline: none;
+    border: none;
+    border: 1px solid #BBBFCA;
+    padding: 10px;
+    margin: auto;
+}
+
+div.input_box div.box1 input {
+    width: 40%;
+}
+div.input_box div.box2 input {
+    width: 100%;
+}
+div.input_box div.box3 input {
+    width: 49%;
+}
+div.input_box div.box2,
+div.input_box div.box3{
+    display: inline-block;
+    /*padding-top: 15px;*/
+    /*width: 80%;*/
+}
+div.input_box div.box2 {
+    width: 40%;
+}
+div.input_box div.box3 {
+    width: 26%;
+}
+div.input_box div.box4 input {
+    width: 80%;
+}
+div.input_box div.box4 textarea {
+    margin-top: 20px;
+    width: 80%;
+    outline: none;
+    border: none;
+    border: 1px solid #BBBFCA;
+    resize: none;
+    font-size: 15px;
+}

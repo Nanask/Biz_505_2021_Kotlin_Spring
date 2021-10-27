@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+            type="text/css"
+            href="/static/write.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<header class="main_header">
+    <h1>READ BOOK</h1>
+    <h3>똑 소리나는 독서록 2021 v1</h3>
+</header>
+<form class="main_form" method="POST">
+<div class="input_box">
+    <input name="seq" placeholder="seq">
+    <div class="box1">
+    <input name="isbn" placeholder="9791163032816"/>
+    <input name="title" placeholder="Do It 자바"/>
+    </div>
+    <div class="box2">
+    <input name="rdate" type="date" placeholder="2021-10-27"/>
+    </div>
+    <div class="box3">
+    <input name="stime" type="time" placeholder="10:12:22"/>
+    <input name="etime" type="time" placeholder="12:32:12"/>
+    </div>
+    <div class="box4">
+    <input name="rating" placeholder="생각중독은 깊은 생각에 빠져 주위를 돌아보지 못하는 것이 시작이다."/>
+    <textarea name="comment" rows="15"  placeholder="내용을 입력해주세요"></textarea>
+    </div>
+</div>
+<div>
+    <button class="btn_save">저장</button>
+    <button type="reset" class="btn_reset">새로작성</button>
+    <button class="btn_list">리스트보기</button>
+</div>
+</form>
+</body>
+<script>
+    $(function() {
+        $("button.btn_save").on("click", function (){
+            alert("저장해봐라")
+            // location.href = "/read/insert"
+                $($("form")).submit()
+        })
+    })
+</script>
+</html>

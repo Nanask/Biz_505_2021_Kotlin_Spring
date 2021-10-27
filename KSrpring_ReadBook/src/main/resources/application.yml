@@ -1,0 +1,19 @@
+# optional<String> config = new Optional<List<String>>();
+#   config.add("classpath:application-jpa.yml")
+#   config.add("classpath:application-dbms.yml)
+
+spring:
+    config.import: >
+        optional:classpath:application-dbms.yml,
+        classpath:application-jpa.yml,
+        classpath:application-logger.yml
+    mvc:
+        static-path-pattern: /static/**
+    web:
+        resources:
+            static-locations: classpath:static/
+            add-mappings: true
+
+    # Logger Setting
+    output.ansi.enabled: ALWAYS
+
