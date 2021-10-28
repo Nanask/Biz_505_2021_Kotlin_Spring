@@ -1,22 +1,4 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-header.main_header {
-    height: 17vh;
-    margin: auto;
-    background-color: #495464;
-}
-header.main_header h1,
-header.main_header h3{
-    padding-top: 17px;
-    text-align: center;
-    color: #F4F4F2;
-}
-header.main_header h1 {
-    font-size: 40px;
-}
+
 div.input_box {
     height: 60vh;
     width: 80%;
@@ -67,4 +49,8 @@ div.input_box div.box4 textarea {
     border: 1px solid #BBBFCA;
     resize: none;
     font-size: 15px;
+}
+
+button {
+
 }

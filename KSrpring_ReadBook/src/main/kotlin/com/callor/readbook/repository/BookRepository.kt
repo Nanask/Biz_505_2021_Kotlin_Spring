@@ -4,4 +4,6 @@ import com.callor.readbook.model.Book
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface BookRepository : JpaRepository<Book, String> {
+
+    fun findByIsbn(isbn:String): Book;
 }

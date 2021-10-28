@@ -9,7 +9,7 @@ data class ReadBook(
         @Id
         @Column(columnDefinition = "BIGINT")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var seq: Long,
+        var seq: Long? = 0,
         var isbn : String,
         var rdate : String,
         var stime : String,

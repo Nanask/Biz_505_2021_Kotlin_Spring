@@ -105,3 +105,5 @@ FROM tbl_sales S
 		ON S.userid = B.userid
 GROUP BY S.userid, B.name ,pname
 ORDER BY S.userid, SUM(total) DESC;
+
+DROP TABLE tbl_readbook

@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header.main_header {
+    height: 17vh;
+    margin: auto;
+    background-color: #495464;
+}
+header.main_header h1,
+header.main_header h3{
+    padding-top: 17px;
+    text-align: center;
+    color: #F4F4F2;
+}
+header.main_header h1 {
+    font-size: 40px;
+}
+ul.main_nav {
+    background-color: #BBBFCA;
+    color: #495464;
+    padding: 1rem;
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}

@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.ResponseBody
 
-
+@RequestMapping(value = ["/"])
 @Controller
 class HomeController {
 
-    @ResponseBody
+//    @ResponseBody
     @RequestMapping(value = ["/", ""], method = [RequestMethod.GET])
     fun home(): String {
-        return "hello"
+        return "home"
     }
 }
