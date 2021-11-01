@@ -1,0 +1,43 @@
+<!-- 템플릿에 있는 layout을 가지고 와서 write파일을 감싸도록 하겠다?-->
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<!--layout을 가지고와서 하나의 view로 보이란 의미-->
+<!--th가 action으로 사용했을 때는 input의 hidden이 자동으로 생성됨
+그러나 action을 사용하지 않을 때는 th:action="@{/login}" 사용해줘야한다.-->
+<section layout:fragment="content" class="content"  >
+    <form method="POST"  class="login_form"  th:action="@{/login}">
+        <fieldset>
+<!--
+th:if="@{변수}"
+변수값이 있으면 (not null)이면 해당 tag를 화면에 그리고 그렇지 않으면 null이면 해당 tag를 아예 그리지 말라
+-->
+            <div class="input error" th:if="${param.error}">
+                로그인 실패: 사용자 ID 또는 비밀번호 오류
+            </div>
+<!--            이 error는 id가 잘못되었을 때 나올 error message이다.-->
+            <div class="input error"
+                 th:if="${session.SPRING_SECURITY_LAST_EXCEPTION?.message}"
+                 th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}">
+            </div>
+<!--            <input type="hidden" th:name="*{_csrf.parameterName}"-->
+<!--                                th:value="*{_csrf.token}"/>-->
+            <div class="input">
+                <input placeholder="ID" name="userid"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password" name="pass"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>로그인 유지하기</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">로그인</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>
