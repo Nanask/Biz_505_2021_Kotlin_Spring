@@ -40,10 +40,9 @@ div.input.error {
     color: red;
 }
 
-dic.input input, div.input label {
+div.input input, div.input label {
     display: inline-block;
     margin: 0px 5px;
-    padding: 8px;
 }
 
 div.input input {
@@ -51,6 +50,7 @@ div.input input {
     border: 1px solid #ddd;
     outline: 0;
     border-radius: 5px;
+    padding: 15px;
 }
 
 div.input label {

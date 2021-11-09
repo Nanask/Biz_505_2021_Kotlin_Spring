@@ -1,6 +1,6 @@
 package com.callor.readbook.service
 
-import com.callor.readbook.models.MemberVO
+import com.callor.readbook.model.MemberVO
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException

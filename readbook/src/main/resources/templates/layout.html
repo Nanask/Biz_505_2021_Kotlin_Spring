@@ -14,11 +14,14 @@
     </script>
     <link rel="stylesheet" th:href="@{/static/css/main.css}">
     <link rel="stylesheet" th:href="@{/static/css/form.css}">
+    <link rel="stylesheet" th:href="@{/static/css/nav.css}">
+    <script th:src="@{/static/js/nav.js}"></script>
     <title>ReadBook</title>
 </head>
 <body>
 <!--headerAndFooter에서 feaderFragment만 가져와서 사용하라-->
 <th:block th:replace="fragment/headerAndFooter :: headerFragment"></th:block>
+<th:block th:replace="fragment/nav :: nav"></th:block>
 <!--thymeleaf에서만 사용하는 것-->
 <!--layout에 컨텐츠라는 이름을 끌어서 오겠다.-->
     <th:block layout:fragment="content"></th:block>

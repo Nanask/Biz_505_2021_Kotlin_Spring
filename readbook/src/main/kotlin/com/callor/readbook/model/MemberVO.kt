@@ -1,4 +1,4 @@
-package com.callor.readbook.models
+package com.callor.readbook.model
 
 
 import org.springframework.security.core.GrantedAuthority

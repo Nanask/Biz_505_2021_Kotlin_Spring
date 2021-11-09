@@ -1,0 +1,32 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<section layout:fragment="content" class="content">
+  <table>
+    <thead>
+      <tr>
+        <th>ISBN</th>
+        <th>도서명</th>
+        <th>읽은날짜</th>
+        <th>start</th>
+        <th>end</th>
+        <th>point</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="LIST:${LIST}">
+        <td></td>
+<!--                th:text="${LIST.isbn}"-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</html>

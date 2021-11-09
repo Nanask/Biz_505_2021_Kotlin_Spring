@@ -1,0 +1,14 @@
+nav.main_nav {
+    display: flex;
+    background-color: cornsilk;
+}
+
+nav.main_nav ul {
+    padding: 0.5rem;
+    display: flex;
+}
+
+nav.main_nav li {
+    margin: 10px;
+    list-style: none;
+}
